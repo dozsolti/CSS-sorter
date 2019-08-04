@@ -4,6 +4,8 @@ Extension which sorts your CSS/SCSS attributes.
 ## How to use
 Press `CTRL/CMD + SHIFT + P` and type `Sort css` to see the available command for our extension.
 
+## Known Issues
+On scss it removes some @imports
 
 ## Orders
 
