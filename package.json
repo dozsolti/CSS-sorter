@@ -3,7 +3,7 @@
 	"displayName": "CSS sorter",
 	"description": "Extension which sorts your CSS/SCSS attributes.",
 	"icon": "./icon.png",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"publisher": "zascal",
 	"engines": {
 		"vscode": "^1.36.0"
