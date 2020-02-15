@@ -1,7 +1,7 @@
 {
 	"name": "CSS-sorter",
 	"displayName": "CSS sorter",
-	"description": "Extension which sorts your CSS/SCSS attributes.",
+	"description": "An extension that helps you organize your CSS by sorting attributes.",
 	"icon": "icon.png",
 	"version": "0.2.1",
 	"publisher": "zascal",
