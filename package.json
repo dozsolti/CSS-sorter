@@ -3,7 +3,7 @@
 	"displayName": "CSS sorter",
 	"description": "Extension which sorts your CSS/SCSS attributes.",
 	"icon": "icon.png",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"publisher": "zascal",
 	"repository": "https://github.com/dozsolti/CSS-sorter",
 	"engines": {
