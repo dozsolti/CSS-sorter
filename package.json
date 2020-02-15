@@ -2,7 +2,8 @@
 	"name": "CSS-sorter",
 	"displayName": "CSS sorter",
 	"description": "Extension which sorts your CSS/SCSS attributes.",
-	"version": "0.0.1",
+	"icon": "./icon.png",
+	"version": "0.0.2",
 	"publisher": "zascal",
 	"engines": {
 		"vscode": "^1.36.0"
@@ -38,7 +39,6 @@
 					"command": "extension.sortcss",
 					"group": "YourGroup@1"
 				}
-
 			]
 		}
 	},
