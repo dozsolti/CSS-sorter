@@ -5,6 +5,7 @@
 	"icon": "./icon.png",
 	"version": "0.1.0",
 	"publisher": "zascal",
+	"repository":"https://github.com/dozsolti/CSS-sorter",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
