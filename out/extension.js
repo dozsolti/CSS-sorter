@@ -65,31 +65,6 @@ function activate(context) {
     context.subscriptions.push(disposable);
 }
 exports.activate = activate;
-function formatter(start) {
-    let end = { attributes: {}, children: {} };
-    for (let k in start) {
-        let val = start[k];
-        if ((typeof val) == 'string') {
-            let keyOfAComment = 'this is a Zascal Key ' + Object.keys(end.children).length + 1;
-            end.children[keyOfAComment] = val;
-        }
-        else {
-            if ((typeof val.value) == 'string') {
-                end.children[val.name] = val.value;
-            }
-            else {
-                let attrs = val.value;
-                for (let attrKey in attrs) {
-                    if (!(val.name in end.children))
-                        end.children[val.name] = { attributes: {}, children: {} };
-                    if (attrs[attrKey].name)
-                        end.children[val.name].attributes[attrs[attrKey].name] = attrs[attrKey].value;
-                }
-            }
-        }
-    }
-    return end;
-}
 function Order(css, orderType) {
     if (orderType == "importante") {
         css['attributes'] = sortAttributesImportante(css['attributes']);
@@ -137,4 +112,47 @@ function sortAttributesImportante(attributes) {
 // this method is called when your extension is deactivated
 function deactivate() { }
 exports.deactivate = deactivate;
+function formatter(start) {
+    let end = { attributes: {}, children: {} };
+    for (let k in start) {
+        let val = start[k];
+        if ((typeof val) == 'string') {
+            let keyOfAComment = 'this is a Zascal Key ' + Object.keys(end.children).length + 1;
+            end.children[keyOfAComment] = val;
+        }
+        else {
+            if (typeof val.value == 'undefined')
+                continue;
+            end.children[val.name] = parseNode(val);
+        }
+    }
+    return end;
+}
+function parseNode(node) {
+    if (node['type'] == 'attr') {
+        let obj = {};
+        obj[node.name] = node.value;
+        return obj;
+    }
+    else if (node['type'] == 'rule') {
+        let numbers = Object.keys(node.value).filter(x => ['attributes', 'children'].indexOf(x) == -1);
+        let obj = {
+            attributes: {},
+            children: {}
+        };
+        for (let k of numbers) {
+            let subNode = node.value[k];
+            let result = parseNode(subNode);
+            for (let resultK in result) {
+                if (subNode['type'] == 'attr')
+                    obj.attributes[resultK] = result[resultK];
+                else if (subNode['type'] == 'rule') {
+                    obj.children[node.value[k].name] = result;
+                }
+            }
+        }
+        return obj;
+    }
+    return JSON.stringify(node);
+}
 //# sourceMappingURL=extension.js.map
