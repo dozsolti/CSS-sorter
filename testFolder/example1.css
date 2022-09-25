@@ -1,0 +1,100 @@
+div{
+    font-size : 18px;
+    border    : 1px solid black;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container .navigations {
+    width: 100%;
+}
+.container .navigations button {
+  color:red;
+	/* Ola worldo */
+    width: 100%; /* hellop world*/
+}
+
+a[target=_blank] {
+  background-color: yellow;
+}
+div[class*="test"] {
+  background: #ffff00;
+}
+* {
+  text-align: center;color: blue;
+}
+h1, h2, p {
+  text-align: center;
+  color: red
+  @include display(flex);
+}
+
+p::first-line { }
+article > p { }
+@charset "utf-8";
+@color-profile --swop5c {
+  src: url('https://example.org/SWOP2006_Coated5v2.icc');
+}
+@counter-style thumbs {
+  system: cyclic;
+  symbols: "a1F44D";
+  suffix: " ";
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+       url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+}
+@font-feature-values Font One {
+  @styleset {
+    nice-style: 12;
+  }
+}
+@mixin bordered($color, $width) {
+  border: $width solid $color;
+}
+@import "variables";
+/* At the top level of your code */
+@media screen and (min-width: 900px) {
+  article {
+    padding: 1rem 3rem;
+  }
+}
+
+/* Nested within another conditional at-rule */
+@supports (display: flex) {
+  z-index: 10px;
+  @media screen and (min-width: 900px) {
+    article {
+      display: flex; /* a faszomba mar*/
+    }
+  }
+}
+@namespace url(XML-namespace-URL);
+@namespace "XML-namespace-URL";
+@page {
+  margin: 1cm;
+}
+@property background-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #c0ffee;
+}
+h1 {  }
+* {  }
+.box { #unique { color: red}}
+.box {#unique { }}
+.box {b { }}
+a[title] {  }
+p:first-child { }
+p::first-line { }
+article p{}
+article > p
+
+{}
+h1 + p
+{}
+h1 ~ p{}
