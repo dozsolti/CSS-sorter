@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  margin-top: 20px;
+  align-items: baseline;
+  @media (max-width: 800px){      //Our styles for Tablet
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+  }
+  @media (max-width: 500px){     //Our styles for Mobile
+    flex-direction: row;
+    width: 80%;
+    margin-top: 10px;
+  }
+}

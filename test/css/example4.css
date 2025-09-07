@@ -1,0 +1,39 @@
+body {
+  align-items: center;
+  background: blue;
+  border: 1px solid black;
+  color: red;
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+@keyframes slidein {
+  from {
+    width: 300%;
+    /* start */
+    margin-left: 100%;
+  }
+
+  to {
+    /* end */
+    margin-left: 0%;
+    width: 100%;
+  }
+}

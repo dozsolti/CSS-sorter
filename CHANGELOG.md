@@ -1,9 +1,15 @@
 # Change Log
 
-All notable changes to the "CSS-sorter" extension will be documented in this file.
+## v1.0.0
+- Major refactor using PostCSS.
+- Support for:
+    - less
+    - scss
+    - html
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## v0.2.1
+- Refactor and bug fixes
 
-## [Unreleased]
+## v0.0.1
 
 - Initial release

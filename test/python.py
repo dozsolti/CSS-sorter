@@ -1,0 +1,1 @@
+# Context menu should not be shown when right-clicking in a Python file.

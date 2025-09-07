@@ -1,3 +1,4 @@
+@charset "utf-8";
 div{
     font-size : 18px;
     border    : 1px solid black;
@@ -18,9 +19,6 @@ div{
 }
 
 a[target=_blank] {
-  background-color: yellow;
-}
-div[class*="test"] {
   background: #ffff00;
 }
 * {
@@ -28,13 +26,12 @@ div[class*="test"] {
 }
 h1, h2, p {
   text-align: center;
-  color: red
+  color: red;
   @include display(flex);
 }
 
 p::first-line { }
 article > p { }
-@charset "utf-8";
 @color-profile --swop5c {
   src: url('https://example.org/SWOP2006_Coated5v2.icc');
 }

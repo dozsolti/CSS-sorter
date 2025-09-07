@@ -1,0 +1,8 @@
+body {
+  /* Comment before color */
+  color: white; /* comment: color: white */
+  /* Comment before background */
+  background: black; /* comment: background: black */
+  /* Comment before border */
+  border: 1px solid black; /* comment: border: 1px solid black */
+}

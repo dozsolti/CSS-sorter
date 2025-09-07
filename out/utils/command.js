@@ -33,22 +33,21 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.activate = activate;
-exports.deactivate = deactivate;
+exports.replaceEditorContent = replaceEditorContent;
 const vscode = __importStar(require("vscode"));
-const command_1 = require("./utils/command");
-const sort_1 = require("./utils/sort");
-const commandNameByImportance = "css-sorter.sortByImportance";
-const commandNameAlphabetical = "css-sorter.sortAlphabetical";
-async function commandSortByImportance() {
-    await (0, command_1.replaceEditorContent)(vscode.window.activeTextEditor, (text, languageId) => (0, sort_1.sort)(text, "importance", languageId));
+async function replaceEditorContent(editor, callback) {
+    if (!editor) {
+        vscode.window.showInformationMessage("No active editor found.");
+        return;
+    }
+    const document = editor.document;
+    const text = document.getText();
+    const sortedText = await callback(text, document.languageId);
+    editor.edit((editBuilder) => {
+        const firstLine = document.lineAt(0);
+        const lastLine = document.lineAt(document.lineCount - 1);
+        const fullRange = new vscode.Range(firstLine.range.start, lastLine.range.end);
+        editBuilder.replace(fullRange, sortedText);
+    });
 }
-async function commandSortAlphabetical() {
-    await (0, command_1.replaceEditorContent)(vscode.window.activeTextEditor, (text, languageId) => (0, sort_1.sort)(text, "alphabetical", languageId));
-}
-function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand(commandNameByImportance, commandSortByImportance));
-    context.subscriptions.push(vscode.commands.registerCommand(commandNameAlphabetical, commandSortAlphabetical));
-}
-function deactivate() { }
-//# sourceMappingURL=extension.js.map
+//# sourceMappingURL=command.js.map

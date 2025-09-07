@@ -1,0 +1,127 @@
+// https://github.com/AlexTheGreat600/nebula/blob/main/style.scss
+/* VARIABLES */
+
+$size-sm: 0.5rem;
+$size-md: 1.5rem;
+$size-lg: 2.5rem;
+
+/* ELEMENTS */
+
+:root {
+    font-family: system-ui, sans-serif;
+    font-size: clamp(0.5rem, 1.5vw, 2rem);
+}
+
+body {
+
+    & {
+        display: grid;
+        padding: 0rem $size-md;
+        justify-content: center;
+        background-color: black;
+    }
+
+    * {
+        cursor: default;
+        padding: $size-sm;
+        text-align: center;
+        font-weight: bolder;
+        color: var(--base07);
+        border-radius: $size-sm;
+    }
+
+    section {
+        margin-bottom: $size-md;
+    }
+
+    section > div:nth-child(2) {
+        gap: $size-md;
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    select {
+        font-size: smaller !important;
+        background-color: var(--base00);
+    }
+
+    button {
+        padding: $size-md;
+        font-size: smaller !important;
+        background-color: var(--base01);
+    }
+
+    nav, section {
+        background-color: var(--base00);
+    }
+
+    select, button {
+        border: none;
+    }
+
+    a, select, button {
+        cursor: pointer;
+    }
+}
+
+nav {
+    & {
+        display: flex;
+        align-items: center;
+        margin: $size-lg 0rem;
+        padding-top: $size-md;
+        padding-bottom: $size-md;
+        justify-content: space-between;
+    }
+}
+
+#section-0 {
+    kbd:nth-child(1) { color: var(--base08) }
+    kbd:nth-child(2) { color: var(--base09) }
+    kbd:nth-child(3) { color: var(--base0A) }
+    kbd:nth-child(4) { color: var(--base0B) }
+}
+
+#section-1 {
+    h1 { color: var(--base08) }
+    h2 { color: var(--base09) }
+    h3 { color: var(--base0A) }
+    h4 { color: var(--base0B) }
+    h5 { color: var(--base0C) }
+    h6 { color: var(--base0D) }
+}
+
+#section-2 {
+    a:nth-child(1) { color: var(--base08) }
+    a:nth-child(2) { color: var(--base09) }
+    a:nth-child(3) { color: var(--base0A) }
+    a:nth-child(4) { color: var(--base0B) }
+    a:nth-child(5) { color: var(--base0C) }
+    a:nth-child(6) { color: var(--base0D) }
+    a:nth-child(7) { color: var(--base0E) }
+    a:nth-child(8) { color: var(--base0F) }
+}
+
+#section-3 {
+    button { color: var(--base00) }
+    button:nth-child(1) { color: var(--base08) }
+    button:nth-child(2) { color: var(--base09) }
+    button:nth-child(3) { color: var(--base0A) }
+    button:nth-child(4) { color: var(--base0B) }
+    button:nth-child(5) { color: var(--base0C) }
+    button:nth-child(6) { color: var(--base0D) }
+    button:nth-child(7) { color: var(--base0E) }
+    button:nth-child(8) { color: var(--base0F) }
+}
+
+#section-4 {
+    button { color: var(--base00) }
+    button:nth-child(1) { border: 0.2rem solid var(--base08); color: var(--base08) }
+    button:nth-child(2) { border: 0.2rem solid var(--base09); color: var(--base09) }
+    button:nth-child(3) { border: 0.2rem solid var(--base0A); color: var(--base0A) }
+    button:nth-child(4) { border: 0.2rem solid var(--base0B); color: var(--base0B) }
+    button:nth-child(5) { border: 0.2rem solid var(--base0C); color: var(--base0C) }
+    button:nth-child(6) { border: 0.2rem solid var(--base0D); color: var(--base0D) }
+    button:nth-child(7) { border: 0.2rem solid var(--base0E); color: var(--base0E) }
+    button:nth-child(8) { border: 0.2rem solid var(--base0F); color: var(--base0F) }
+}

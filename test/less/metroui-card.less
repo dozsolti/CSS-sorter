@@ -1,0 +1,135 @@
+// https://github.com/olton/metroui/blob/dev/source/components/cards/cards.less
+@import (once) "../../include/vars";
+@import (once) "../../include/mixins";
+
+:root {
+    --card-header-background: #fbfbfb;
+    --card-header-color: #191919;
+    --card-footer-background: #fbfbfb;
+    --card-footer-color: #191919;
+    --card-background: #ffffff;
+    --card-color: #191919;
+    --card-avatar-border-color: #ffffff;
+    --card-border-radius: 6px;
+    --card-button-border-color: var(--border-color);
+}
+
+.dark-side {
+    --card-header-background: #282c35;
+    --card-header-color: #fbfbfb;
+    --card-footer-background: #282c35;
+    --card-footer-color: #fbfbfb;
+    --card-background: #2b2d30;
+    --card-color: #dbdfe7;
+    --card-avatar-border-color: #414245;
+    --card-button-border-color: var(--border-color);
+}
+
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    font-size: 14px;
+    margin: 8px auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-border-radius);
+    background: var(--card-background);
+    color: var(--card-color);
+}
+
+.card-header {
+    border-bottom: 1px var(--border-color) solid;
+    padding: .5rem 1rem;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--card-header-background);
+    color: var(--card-header-color);
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+    overflow: hidden;
+
+    .buttons {
+        margin-left: auto;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .button {
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        border: 1px solid var(--card-button-border-color);
+        padding: 0;
+        margin-right: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.card-content {
+    display: flex;
+    background-color: var(--card-background);
+    color: var(--card-color);
+    padding: 1rem;
+}
+
+.card-footer {
+    border-top: 1px var(--border-color) solid;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--card-footer-background);
+    color: var(--card-footer-color);
+    border-bottom-left-radius: var(--card-border-radius);
+    border-bottom-right-radius: var(--card-border-radius);
+    overflow: hidden;
+
+    .button {
+        margin-right: 4px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.card {
+    &.image-header {
+        .card-header {
+            height: 9rem;
+            vertical-align: bottom;
+            background-size: cover;
+            background-position: center;
+            align-items: flex-start;
+            justify-content: flex-end;
+        }
+    }
+}
+
+* + .card {
+    margin-top: 1rem;
+}
+
+.card {
+    &.flex-card {
+        display: flex;
+        flex-flow: column;
+
+        .card-header, .card-footer {
+            height: 57px;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+    }
+}
